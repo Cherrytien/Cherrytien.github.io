@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 本科生涯结束了1
-category: 生活1
-tags: Essay1
-keywords: 本科,结束1
+category: 生活
+tags: Essay
+keywords: 本科,结束
 description: 毕设答辩完了，大概大学四年也等于交代了吧1
 ---
 
