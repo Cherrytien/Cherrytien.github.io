@@ -1,5 +1,5 @@
 ---
-title: Why Blog
+title: Have a good day
 layout: post
 ---
 
