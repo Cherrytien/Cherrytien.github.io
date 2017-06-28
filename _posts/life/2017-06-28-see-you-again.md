@@ -1,3 +1,12 @@
+---
+layout: post
+title: See you again
+category: 生活
+tags: Essay
+keywords: none
+description: have a try
+---
+
 # 欢迎使用马克飞象
 
 @(示例笔记本)[马克飞象|帮助|Markdown]
