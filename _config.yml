@@ -2,7 +2,7 @@
 title: April的博客
 email: dsty0228@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  lds的博客
+  Charles的博客
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: http://byrds.cn # the base hostname & protocol for your site
 rss_url: /pages/feed.xml
@@ -14,11 +14,11 @@ filter: 'category'
 recent_num: 20
 
 # Social account
-#twitter: none
+# twitter: Charles
 weibo: 一盒糖的月色
 github: Cherrytien
 instagram: rain_heart_
-#linkedin: none
+linkedin: dsty0228
 
 # avatar and Favicon
 avatar: http://i2.kiimg.com/1949/5ac625f539a3cdc1.jpg
