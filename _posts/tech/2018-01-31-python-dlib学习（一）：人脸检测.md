@@ -4,7 +4,7 @@ title: python dlib学习（一）：人脸检测
 category: 技术
 tags:python
 keywords: dlib python
-description:null
+description: null
 ---
 ####1、环境安装
 
