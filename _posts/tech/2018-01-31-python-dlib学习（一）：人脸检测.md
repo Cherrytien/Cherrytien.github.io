@@ -1,8 +1,8 @@
 ---
 layout: post
-title: python dlib学习（一）：人脸检测
+title: python dlib学习（一）:人脸检测
 category: 技术
-tags:python
+tags: python
 keywords: dlib python
 description: null
 ---
