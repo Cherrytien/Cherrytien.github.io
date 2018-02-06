@@ -7,7 +7,7 @@ keywords: dlib python
 description: null
 ---
 
-####1、环境安装
+#### 1、环境安装
 
  **Windows：**
 			旧版本安装pip install xxx.whl。以下是whl文件地址：
@@ -28,7 +28,7 @@ description: null
 
 ​		安装过程慢，耐心等。
 
-####2、程序
+#### 2、程序
 
 ​	注：程序中使用了python-opencv、dlib，使用前请配置好环境。 
 ​	程序中已有注释。
