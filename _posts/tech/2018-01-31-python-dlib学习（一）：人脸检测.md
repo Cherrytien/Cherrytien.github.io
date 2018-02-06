@@ -4,19 +4,20 @@ title: python dlib学习（一）：人脸检测
 category: 技术
 tags:python
 keywords: dlib python
-description: null
+description:null
 ---
-1、环境安装
+####1、环境安装
 
-Windows：旧版本安装pip install xxx.whl。以下是whl文件地址：
-
+ **Windows：**
+			旧版本安装pip install xxx.whl。以下是whl文件地址：
 ​			[Python Package Index]( https://pypi.python.org/pypi/dlib/18.17.100)     
 
 ​		最新版本安装：不要嫌麻烦，先装上visual studio2015 （C++模块）。
 
 ​		  具体的记不清了，装上cmake和boost，然后pip install dlib。
 
-Ubuntu：sudo apt-get install build-essential cmake
+**Ubuntu：**
+	sudo apt-get install build-essential cmake
 
 ​		sudo apt-get install libgtk-3-dev
 
@@ -26,47 +27,42 @@ Ubuntu：sudo apt-get install build-essential cmake
 
 ​		安装过程慢，耐心等。
 
-2、程序
+####2、程序
 
 ​	注：程序中使用了python-opencv、dlib，使用前请配置好环境。 
 ​	程序中已有注释。
+```
+	-*- coding: utf-8 -*-
+	import sys
+	import dlib
+	import cv2
 
-`-*- coding: utf-8 -*-
-
-import sys
-import dlib
-import cv2
-
-detector = dlib.get_frontal_face_detector() #获取人脸分类器
-
-# 传入的命令行参数
-for f in sys.argv[1:]:
+	detector = dlib.get_frontal_face_detector() #获取人脸分类器
+	# 传入的命令行参数
+	for f in sys.argv[1:]:
     # opencv 读取图片，并显示
     img = cv2.imread(f, cv2.IMREAD_COLOR)
-    
     # 摘自官方文档：
     # image is a numpy ndarray containing either an 8bit grayscale or RGB image.
     # opencv读入的图片默认是bgr格式，我们需要将其转换为rgb格式；都是numpy的ndarray类。
     b, g, r = cv2.split(img)    # 分离三个颜色通道
     img2 = cv2.merge([r, g, b])   # 融合三个颜色通道生成新图片
-    
     dets = detector(img, 1) #使用detector进行人脸检测 dets为返回的结果
     print("Number of faces detected: {}".format(len(dets)))  # 打印识别到的人脸个数
     # enumerate是一个Python的内置方法，用于遍历索引
     # index是序号；face是dets中取出的dlib.rectangle类的对象，包含了人脸的区域等信息
     # left()、top()、right()、bottom()都是dlib.rectangle类的方法，对应矩形四条边的位置
     for index, face in enumerate(dets):
-        print('face {}; left {}; top {}; right {}; bottom {}'.format(index, face.left(), face.top(), face.right(), face.bottom()))
-    
-        # 在图片中标注人脸，并显示
-        left = face.left()
-        top = face.top()
-        right = face.right()
-        bottom = face.bottom()
-        cv2.rectangle(img, (left, top), (right, bottom), (0, 255, 0), 3)
-        cv2.namedWindow(f, cv2.WINDOW_AUTOSIZE)
-        cv2.imshow(f, img)
-
-# 等待按键，随后退出，销毁窗口
-k = cv2.waitKey(0)
-cv2.destroyAllWindows()`
+    print('face {}; left {}; top {}; right {}; bottom {}'.format(index,face.left(), face.top(), face.right(), face.bottom()))
+    # 在图片中标注人脸，并显示
+    left = face.left()
+    top = face.top()
+    right = face.right()
+    bottom = face.bottom()
+    cv2.rectangle(img, (left, top), (right, bottom), (0, 255, 0), 3)
+    cv2.namedWindow(f, cv2.WINDOW_AUTOSIZE)
+    cv2.imshow(f, img)
+    # 等待按键，随后退出，销毁窗口
+    k = cv2.waitKey(0)
+	cv2.destroyAllWindows()
+```
